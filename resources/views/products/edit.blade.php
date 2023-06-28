@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Product')
-@section('content-header', 'Edit Product')
+@section('title', 'Editar Produto')
+@section('content-header', 'Editar Produto')
 
 @section('content')
 
@@ -13,9 +13,9 @@
             @method('PUT')
 
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name">Nome</label>
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name"
-                    placeholder="Name" value="{{ old('name', $product->name) }}">
+                    placeholder="Nome" value="{{ old('name', $product->name) }}">
                 @error('name')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -25,10 +25,10 @@
 
 
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Descrição</label>
                 <textarea name="description" class="form-control @error('description') is-invalid @enderror"
                     id="description"
-                    placeholder="description">{{ old('description', $product->description) }}</textarea>
+                    placeholder="descrição">{{ old('description', $product->description) }}</textarea>
                 @error('description')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -37,10 +37,10 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Image</label>
+                <label for="image">Imagem</label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="image" id="image">
-                    <label class="custom-file-label" for="image">Choose file</label>
+                    <label class="custom-file-label" for="image">Carregar imagem</label>
                 </div>
                 @error('image')
                 <span class="invalid-feedback" role="alert">
@@ -50,9 +50,9 @@
             </div>
 
             <div class="form-group">
-                <label for="barcode">Barcode</label>
+                <label for="barcode">Código de Barra</label>
                 <input type="text" name="barcode" class="form-control @error('barcode') is-invalid @enderror"
-                    id="barcode" placeholder="barcode" value="{{ old('barcode', $product->barcode) }}">
+                    id="barcode" placeholder="Código de barra" value="{{ old('barcode', $product->barcode) }}">
                 @error('barcode')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -61,9 +61,9 @@
             </div>
 
             <div class="form-group">
-                <label for="price">Price</label>
+                <label for="price">Preço</label>
                 <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" id="price"
-                    placeholder="price" value="{{ old('price', $product->price) }}">
+                    placeholder="Preço" value="{{ old('price', $product->price) }}">
                 @error('price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -72,9 +72,9 @@
             </div>
 
             <div class="form-group">
-                <label for="quantity">Quantity</label>
+                <label for="quantity">Quantidade</label>
                 <input type="text" name="quantity" class="form-control @error('quantity') is-invalid @enderror"
-                    id="quantity" placeholder="Quantity" value="{{ old('quantity', $product->quantity) }}">
+                    id="quantity" placeholder="Quantidade" value="{{ old('quantity', $product->quantity) }}">
                 @error('quantity')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@
             </div>
 
             <div class="form-group">
-                <label for="status">Status</label>
+                <label for="status">Estado</label>
                 <select name="status" class="form-control @error('status') is-invalid @enderror" id="status">
                     <option value="1" {{ old('status', $product->status) === 1 ? 'selected' : ''}}>Active</option>
                     <option value="0" {{ old('status', $product->status) === 0 ? 'selected' : ''}}>Inactive</option>
@@ -95,7 +95,7 @@
                 @enderror
             </div>
 
-            <button class="btn btn-primary" type="submit">Update</button>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
         </form>
     </div>
 </div>

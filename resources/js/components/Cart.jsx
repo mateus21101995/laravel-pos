@@ -213,7 +213,7 @@ class Cart extends Component {
                                 <input
                                     type="text"
                                     className="form-control"
-                                    placeholder="Scan Barcode..."
+                                    placeholder="Scanner Código de barra..."
                                     value={barcode}
                                     onChange={this.handleOnChangeBarcode}
                                 />
@@ -224,7 +224,7 @@ class Cart extends Component {
                                 className="form-control"
                                 onChange={this.setCustomerId}
                             >
-                                <option value="">Walking Customer</option>
+                                <option value="">Nenhum</option>
                                 {customers.map((cus) => (
                                     <option
                                         key={cus.id}
@@ -239,9 +239,9 @@ class Cart extends Component {
                             <table className="table table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Product Name</th>
-                                        <th>Quantity</th>
-                                        <th className="text-right">Price</th>
+                                        <th>Nome do produto</th>
+                                        <th>Quantidades</th>
+                                        <th className="text-right">Preço</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -298,7 +298,7 @@ class Cart extends Component {
                                 onClick={this.handleEmptyCart}
                                 disabled={!cart.length}
                             >
-                                Cancel
+                                Cancelar
                             </button>
                         </div>
                         <div className="col">
@@ -308,7 +308,7 @@ class Cart extends Component {
                                 disabled={!cart.length}
                                 onClick={this.handleClickSubmit}
                             >
-                                Submit
+                                Finalizar Venda
                             </button>
                         </div>
                     </div>
@@ -318,7 +318,7 @@ class Cart extends Component {
                         <input
                             type="text"
                             className="form-control"
-                            placeholder="Search Product..."
+                            placeholder="Procurar produtos..."
                             onChange={this.handleChangeSearch}
                             onKeyDown={this.handleSeach}
                         />

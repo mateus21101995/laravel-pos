@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Orders List')
-@section('content-header', 'Order List')
+@section('title', 'Lista de Venda')
+@section('content-header', 'Lista de Vendas')
 @section('content-actions')
-    <a href="{{route('cart.index')}}" class="btn btn-primary">Open POS</a>
+    <a href="{{route('cart.index')}}" class="btn btn-primary">Nova Venda</a>
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
                             <input type="date" name="end_date" class="form-control" value="{{request('end_date')}}" />
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-outline-primary" type="submit">Submit</button>
+                            <button class="btn btn-outline-primary" type="submit">Filtar</button>
                         </div>
                     </div>
                 </form>
@@ -30,19 +30,17 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Customer Name</th>
+                    <th>Nome do Cliente</th>
                     <th>Total</th>
-                    <th>Received Amount</th>
-                    <th>Status</th>
-                    <th>To Pay</th>
-                    <th>Created At</th>
+                    <th>Valor Pago</th>
+                    <th>Estado da Venda</th>
+                    <th>Preço Total</th>
+                    <th>Data da Venda</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($orders as $order)
                 <tr>
-                    <td>{{$order->id}}</td>
                     <td>{{$order->getCustomerName()}}</td>
                     <td>{{ config('settings.currency_symbol') }} {{$order->formattedTotal()}}</td>
                     <td>{{ config('settings.currency_symbol') }} {{$order->formattedReceivedAmount()}}</td>

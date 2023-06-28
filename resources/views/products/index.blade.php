@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Product List')
-@section('content-header', 'Product List')
+@section('title', 'Produtos')
+@section('content-header', 'Produtos')
 @section('content-actions')
-<a href="{{route('products.create')}}" class="btn btn-primary">Create Product</a>
+<a href="{{route('products.create')}}" class="btn btn-primary">Novo Produto</a>
 @endsection
 @section('css')
 <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
@@ -14,22 +14,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Image</th>
-                    <th>Barcode</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                    <th>Created At</th>
-                    <th>Updated At</th>
-                    <th>Actions</th>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th>Código de Barra</th>
+                    <th>Preço</th>
+                    <th>Quantidades</th>
+                    <th>Estado</th>
+                    <th>Cadastrado</th>
+                    <th>Actualizado</th>
+                    <th>Acção</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($products as $product)
                 <tr>
-                    <td>{{$product->id}}</td>
                     <td>{{$product->name}}</td>
                     <td><img class="product-img" src="{{ Storage::url($product->image) }}" alt=""></td>
                     <td>{{$product->barcode}}</td>

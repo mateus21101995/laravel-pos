@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 
-@section('title', 'Customer List')
-@section('content-header', 'Customer List')
+@section('title', 'Cliente')
+@section('content-header', 'Cliente')
 @section('content-actions')
-    <a href="{{route('customers.create')}}" class="btn btn-primary">Add Customer</a>
+    <a href="{{route('customers.create')}}" class="btn btn-primary">Adicionar Clientes</a>
 @endsection
 @section('css')
     <link rel="stylesheet" href="{{ asset('plugins/sweetalert2/sweetalert2.min.css') }}">
@@ -14,21 +14,19 @@
             <table class="table">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Avatar</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Imagem</th>
+                    <th>Primeiro Nome</th>
+                    <th>Apelido</th>
                     <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Created At</th>
-                    <th>Actions</th>
+                    <th>Telefone</th>
+                    <th>Endereço</th>
+                    <th>Data de Cadastro</th>
+                    <th>Acção</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($customers as $customer)
                     <tr>
-                        <td>{{$customer->id}}</td>
                         <td>
                             <img width="50" src="{{$customer->getAvatarUrl()}}" alt="">
                         </td>
